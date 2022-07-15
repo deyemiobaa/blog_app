@@ -13,6 +13,10 @@ git clone  <https://github.com/deyemiobaa/blog_app.git>
 - run ```cd blog_app``` to enter the project folder
 - run `bundle install` to install dependencies
 
+### Testing
+Tests are present in the `spec` folder.
+- run `rspec --format documentation spec/models` to check all test cases
+
 ## Authors
 
 👤 **Sodiq**
