@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   post_author = User.create(name: 'John David')
-  random_post_by_John = Post.create(author: post_author, title: 'once upon a time')
+  random_post_by_john = Post.create(author: post_author, title: 'once upon a time')
 
   it 'create a post with valid title and length' do
     expect(Post.create(author: post_author, title: 'once upon a time')).to be_valid
@@ -19,10 +19,10 @@ RSpec.describe Post, type: :model do
 
   it 'return the last five comments of a post' do
     new_user = User.create(name: 'Commenter')
-    7.times do |i|
-      Comment.create(post: random_post_by_John, author: new_user, text: 'Hi Tom!' )
+    7.times do |_i|
+      Comment.create(post: random_post_by_john, author: new_user, text: 'Hi Tom!')
     end
-    comments_hash = random_post_by_John.return_the_5_most_recent_comments
+    comments_hash = random_post_by_john.return_the_5_most_recent_comments
     expect(comments_hash.length).to eq(5)
   end
 end
