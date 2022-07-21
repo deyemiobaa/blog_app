@@ -1,1 +1,22 @@
-<h1>This page displays the info of a user</h1>
+<div>
+  <%= link_to user_posts_path(@user.id) do %>
+  <p>
+      <%= @user.name %>
+  </p>
+  <% end %>
+  <p>
+    Number of posts:  <%= @user.posts_counter %>
+  </p>
+</div>
+<p><%= @user.bio %></p>
+<% @posts.each do |post| %>
+  <div>
+    <p>
+      Post #<%= post.id %>
+    </p>
+    <h3>
+      <%= post.title %>
+    </h3>
+    <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %>  </p>
+  </div>
+<% end %>
