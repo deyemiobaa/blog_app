@@ -1,1 +1,20 @@
-<h1>This page displays the contents of a post by a user</h1>
+<div>
+  <div>
+    <p>
+      Post #<%= @post.id %> by <%= @post.author.name %>
+    </p>
+    <p>
+      Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
+    </p>
+  </div>
+  <p>
+    <%= @post.text %>
+  </p>
+</div>
+<div>
+  <% @post.comments.each do |comment| %>
+    <p>
+      <%= comment.author.name %> : <%= comment.text %>
+    </p>
+  <% end %>
+</div>
