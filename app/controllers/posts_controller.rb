@@ -17,10 +17,10 @@ class PostsController < ApplicationController
     post = Post.new(params[:post].permit(:title, :text))
     post.author = current_user
     if post.save
-      flash[:notice] = "Post was created successfully."
+      flash[:notice] = 'Post was created successfully.'
       redirect_to user_posts_path(current_user, post)
     else
-      flash.now[:error] = "Post was not created."
+      flash.now[:error] = 'Post was not created.'
       render :show
     end
   end

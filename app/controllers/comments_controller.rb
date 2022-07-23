@@ -7,10 +7,10 @@ class CommentsController < ApplicationController
     comment.author = current_user
     comment.post = post
     if comment.save
-      flash[:notice] = "Comment was added successfully."
+      flash[:notice] = 'Comment was added successfully.'
       redirect_to user_post_path(post_author, post)
     else
-      flash.now[:error] = "Comment was not added."
+      flash.now[:error] = 'Comment was not added.'
     end
   end
 end
