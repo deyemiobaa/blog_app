@@ -1,0 +1,7 @@
+<h4>Add a new comment </h4>
+
+<%= form_with model: comment, url: user_post_comments_path(author, post), method: :post do |f| %>
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+  <%= f.submit "Comment" %>
+<% end %>
