@@ -54,7 +54,6 @@ group :development, :test do
   gem 'ffi', '~> 1.15', '>= 1.15.5'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'database_cleaner'
 end
 
 group :development do
@@ -71,6 +70,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'database_cleaner-active_record'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
