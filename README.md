@@ -15,7 +15,7 @@ git clone  <https://github.com/deyemiobaa/blog_app.git>
 
 ### Testing
 Tests are present in the `spec` folder.
-- run `rspec --format documentation spec/models` to check all test cases
+- run `rspec --format documentation spec/` to check all test cases
 
 ## Authors
 
