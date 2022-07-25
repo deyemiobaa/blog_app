@@ -54,6 +54,7 @@ group :development, :test do
   gem 'ffi', '~> 1.15', '>= 1.15.5'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'database_cleaner'
 end
 
 group :development do
