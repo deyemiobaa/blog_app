@@ -3,9 +3,11 @@
     <p>
       Post #<%= @post.id %> by <%= @post.author.name %>
     </p>
+    <%= render partial: 'shared/comments/new_comment', locals: { post: @post, author: @post.author, comment: Comment.new } %>
     <p>
       Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
     </p>
+    <%= render partial: 'shared/likes/new_like', locals: { like: Like.new, post: @post, author: @post.author} %>
   </div>
   <p>
     <%= @post.text %>
