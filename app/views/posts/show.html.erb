@@ -3,6 +3,9 @@
     <p>
       Post #<%= @post.id %> by <%= @post.author.name %>
     </p>
+    <p>
+      Title: <%= @post.title %>
+    </p>
     <%= render partial: 'shared/comments/new_comment', locals: { post: @post, author: @post.author, comment: Comment.new } %>
     <p>
       Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
