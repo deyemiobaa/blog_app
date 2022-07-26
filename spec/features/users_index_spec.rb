@@ -5,8 +5,8 @@ require 'rails_helper'
 RSpec.describe 'Users index page', type: :feature do
   before :each do
     @user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
-    @user2 = User.create(name: 'Lilly2', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
-    @user3 = User.create(name: 'Lilly3', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+    @user2 = User.create(name: 'Bella', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+    @user3 = User.create(name: 'Joe', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
   end
   it 'displays all users username' do
     visit '/'
@@ -18,6 +18,8 @@ RSpec.describe 'Users index page', type: :feature do
   it 'displays all users profile photo' do
     visit '/'
     find('img[alt="Lilly"]')
+    find('img[alt="Bella"]')
+    find('img[alt="Joe"]')
   end
 
   it 'displays number of posts' do
