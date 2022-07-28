@@ -13,4 +13,16 @@ class CommentsController < ApplicationController
       flash.now[:error] = 'Comment was not added.'
     end
   end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    post = comment.post
+    post_author = post.author
+    if comment.destroy
+      flash[:notice] = 'Comment was deleted successfully.'
+      redirect_to user_post_path(post_author, post)
+    else
+      flash.now[:error] = 'Comment was not deleted.'
+    end
+  end
 end
