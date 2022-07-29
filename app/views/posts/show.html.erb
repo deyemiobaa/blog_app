@@ -6,6 +6,9 @@
     <p>
       Title: <%= @post.title %>
     </p>
+    <% if can? :destroy, @post %>
+      <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     <%= render partial: 'shared/comments/new_comment', locals: { post: @post, author: @post.author, comment: Comment.new } %>
     <p>
       Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
@@ -21,5 +24,8 @@
     <p>
       <%= comment.author.name %> : <%= comment.text %>
     </p>
+    <% if can? :destroy, comment %>
+      <%= button_to 'Delete comment', user_post_comment_path(comment.author, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   <% end %>
 </div>
