@@ -3,11 +3,11 @@ class Api::V1::PostsController < ApiController
     @user = @current_user
     if @user
       render json: {
-        posts: @user.posts,
+        posts: @user.posts
       }
     else
       render json: {
-        message: "User not found"
+        message: 'User not found'
       }
     end
   end

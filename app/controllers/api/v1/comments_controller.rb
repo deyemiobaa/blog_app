@@ -5,7 +5,7 @@ class Api::V1::CommentsController < ApiController
       comments: post.comments
     }
   end
-  
+
   def create
     post = Post.find(params[:post_id])
     comment = Comment.new(params[:comment].permit(:text))
@@ -13,11 +13,11 @@ class Api::V1::CommentsController < ApiController
     comment.post = post
     if comment.save
       render json: {
-        message: "Comment was added successfully."
+        message: 'Comment was added successfully.'
       }
     else
       render json: {
-        message: "Comment was not added."
+        message: 'Comment was not added.'
       }
     end
   end

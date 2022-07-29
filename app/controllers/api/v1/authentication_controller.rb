@@ -9,7 +9,7 @@ class Api::V1::AuthenticationController < ApiController
       }
     else
       render json: {
-        errors: "Invalid email or password"
+        errors: 'Invalid email or password'
       }
     end
   end
