@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api, default: { format: :json } do
-    namespace v1 do
+    namespace :v1 do
       resources :users, only: [:show] do
         resources :posts, only: [:show] do
           resources :comments, only: [:create]
