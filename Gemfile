@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Authentication
 gem 'devise'
-
+gem 'jwt'
 # Authorization
 gem 'cancancan'
 
